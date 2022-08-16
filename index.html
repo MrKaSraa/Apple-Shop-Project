@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apple Shop</title>  
+  <link rel="icon"
+  href="./images/icons8-apple-logo-40.png"/>
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"
+  />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link
+    rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+/>
+<link rel="stylesheet" href="./styles/js framework/iziToast.min.css">
+  
+<link rel="stylesheet" href="./styles/style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
+</head>
+<body>
+
+    
+    <div class="loader">
+        <img src="data:image/jpeg;base64,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"  alt="Loading..." />
+      </div>
+
+    <header>
+        <ul class="ul-header">
+            <li class="mx-3 active"><a href="#">صفحه اصلی</a></li>
+            <li class="mx-3"><a href="#">فروشگاه</a></li>
+            <li class="mx-3"><a href="#">وبلاگ</a></li>
+            <li class="mx-3"><a href="#">تماس با ما</a></li>
+            <i class="fa fa-search mx-3 mt-1"></i>
+        </ul>
+
+        <div class="icons-header">
+            <i class="icon-header-1"> <a href="#"><img src="./images/icons8-login-30.png" alt="#"></a></i>
+            <button type="button" class="btn mx-2 btn-sm position-relative">
+               <img src="./images/icons8-person-30 .png" alt="">
+                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-red">
+                  99+
+                  <span class="visually-hidden">unread messages</span>
+                </span>
+              </button>
+           
+           
+       
+        </div>
+
+        <button class="btn btn-outline-whitee mx-2 d-sm-none btnoffcanvas" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><img src="./images/icons8-setting-30.png" alt=""></button>
+
+<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+    <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="staticBackdropLabel">منو</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <div class="section-off-body section-asli">
+         <i class="fa fa-home"></i>
+         <p>صفحه اصلی</p>
+        </div><hr>
+        <div class="section-off-body">
+            <i class="fa fa-shop"></i>
+            <p>فروشگاه</p>
+           </div><hr>
+           <div class="section-off-body">
+            <i class="fa fa-envelope-open"></i>
+            <p>وبلاگ</p>
+           </div><hr>
+           <div class="section-off-body">
+            <i class="fa fa-phone"></i>
+            <p>تماس با ما</p>
+           </div><hr>
+           <div class="section-off-body">
+            <i class="fa fa-comments"></i>
+            <p>اعلان ها</p>
+           </div><hr>
+           <div class="section-off-body">
+            <i class="fa fa-exclamation-circle"></i>
+            <p>شکایات</p>
+           </div>
+      </div>
+</div>
+    </header>
+
+
+  
+
+   <main class="animate__animated animate__fadeInDown">
+    <div class="swiper mySwiper pt-5 mb-5">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div class="slide">
+                <div class="img-slid">
+                    <img src="./images/1-removebg-preview.png"  class=" img-slide img-fluid" alt="">
+                </div>
+                <div class="introslide">
+                    <p>Acer Nitro 5</p>
+                    <div class="intro-product my-2">
+                        <span class="span-slider-1">8-core</span>
+                        <span class="px-3 span-slider-2">8-core</span>
+                        <span class="span-slider-3">16-core</span>
+                    </div>
+                    <p>بالاترین قدرت،بهترین قیمت</p>
+                    <div class="btn-header-div">
+                        <button class="btn btn-slider">مشخصات بیشتر</button>
+           </div>
+                </div>
+          </div>
+        </div>
+          <div class="swiper-slide">
+            <div class="slide slider-revers">
+               <div class="img-slid">
+                    <img src="./images/4zu3_MSI_Modern_14_B11SB-1-removebg-preview.png"  class=" img-slide img-fluid" alt="">
+                </div>
+                <div class="introslide ">
+                    <p>Raider GE76 - 12U</p>
+                    <div class="intro-product my-2">
+                        <span class="span-slider-1">7-core</span>
+                        <span class="px-3 span-slider-2">8-core</span>
+                        <span class="span-slider-3">16-core</span>
+                    </div>
+                    <p>بالاترین سرعت،بهترین قیمت</p>
+                    <div class="btn-header-div">
+                                 <button class="btn btn-slider">مشخصات بیشتر</button>
+                    </div>
+           
+                </div>
+              
+          </div>
+          </div>
+          <div class="swiper-slide "  >
+            <div class="slide slider-small">
+                <div class="img-slid">
+                    <img src="./images/UEEkgUpRTeWcwpGaYpPJES-removebg-preview.png"  class=" img-slide img-fluid" alt="">
+                </div>
+                <div class="introslide">
+                    <p>MateBook D 16</p>
+                    <div class="intro-product my-2">
+                        <span class="span-slider-1">3-core</span>
+                        <span class="px-3 span-slider-2">5-core</span>
+                        <span class="span-slider-3">8-core</span>
+                    </div>
+                    <p>بالاترین کیفیت،بهترین قیمت</p>
+                    <div class="btn-header-div">
+                        <button class="btn btn-slider">مشخصات بیشتر</button>
+           </div>
+                </div>
+          </div>
+          </div>
+     
+        </div>
+   
+    
+      </div>
+  </main>
+
+
+  <div class="products-icon my-5"  data-aos="fade-up">
+    <div class="product-icons">
+       <section class="section">
+            <img src="./images/icons/icons8-iphone-x-45.png" alt="">
+        <p class='p1-product-icons'>Iphone </p>
+        <p>13 محصول</p>
+       </section>
+
+       <section class="section">
+            <img src="./images/icons/icons8-laptop-45 (1).png" alt="">
+            <p class='p1-product-icons'>Laptop</p>
+            <p>7 محصول</p>
+       </section>
+
+
+       <section class="section">
+            <img src="./images/icons/icons8-macbook-45.png" alt="">
+            <p class='p1-product-icons'>Mac Mini</p>
+            <p>4 محصول</p>
+       </section>
+    </div>
+
+    <div class="product-icons">
+
+       <section class="section">
+            <img src="./images/icons/icons8-mouse-45 (1).png" alt="">
+            <p class='p1-product-icons'>Magic Mouse</p>
+            <p>22 محصول</p>
+       </section>
+
+       <section class="section">
+            <img src="./images/icons/icons8-ipad-45.png" alt="">
+            <p class='p1-product-icons'> Tablet</p>
+            <p>6 محصول</p>
+       </section>
+
+
+       <section class="section">
+            <img src="./images/icons/icons8-apple-watch-45 (1).png" alt="">
+            <p class='p1-product-icons'>Apple Watch</p>
+            <p>7 محصول</p>
+       </section>
+    </div>
+  </div>
+   
+
+<aside class=" mx-5"  data-aos="fade-up">
+    <div class="swiper mySwiper2">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div class="product">
+                    <div class="img-ptoducts">
+                        <img class="img-product" src="./images/slider product/iphone-13-pro-max-sierrablue-1_3_1-removebg-preview.png" alt="">
+                    </div>
+                    <div class="icons-product">
+                           
+                            <img src="./images/icons8-star-20 (2).png"class="icon-product" alt="#">
+                            <img src="./images/icons8-star-20 (2).png"class="icon-product" alt="#">
+                            <img src="./images/icons8-star-20 (2).png"class="icon-product" alt="#">
+                            <img src="./images/icons8-star-20 (2).png"class="icon-product" alt="#">
+                            <img src="./images/icons8-star-20 (2).png"class="icon-product" alt="#">
+                    </div>
+                    <p>Iphone 13 Pro 256</p>
+                    <p class="price-product">34،456،300 تومان</p>
+          </div>
+        </div>
+
+          <div class="swiper-slide">
+            <div class="product">
+                <div class="img-ptoducts">
+                    <img class="img-product" src="./images/slider product/7237df3bcde9f98c7086bd7a36de7f0b-removebg-preview.png" alt="">
+                </div>
+                <div class="icons-product">
+                       
+                        <img src="./images/icons8-star-20 (2).png"class="icon-product" alt="#">
+                        <img src="./images/icons8-star-20 (2).png"class="icon-product" alt="#">
+                        <img src="./images/icons8-star-20 (2).png"class="icon-product" alt="#">
+                        <img src="./images/icons8-star-20 (2).png"class="icon-product" alt="#">
+                        <img src="./images/slider product/icons8-star-17.png    "class="icon-product2 " alt="#">
+                </div>
+                <p>chuwi herobook pro</p>
+                <p class="price-product">40،400،000 تومان</p>
+      </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="product">
+                <div class="img-ptoducts">
+                    <img class="img-product" src="./images/slider product/GUEST_e9b7f629-9bfb-4461-939b-f05922c57f5b-removebg-preview.png" alt="">
+                </div>
+                <div class="icons-product">
+                       
+                        <img src="./images/icons8-star-20 (2).png"class="icon-product" alt="#">
+                        <img src="./images/icons8-star-20 (2).png"class="icon-product" alt="#">
+                        <img src="./images/icons8-star-20 (2).png"class="icon-product" alt="#">
+                        <img src="./images/icons8-star-20 (2).png"class="icon-product" alt="#">
+                        <img src="./images/slider product/icons8-star-17.png    "class="icon-product2 " alt="#">
+                </div>
+                <p> Apple Watch SE GPS</p>
+                <p class="price-product">16،700،300 تومان</p>
+      </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="product">
+                <div class="img-ptoducts">
+                    <img class="img-product" src="./images/slider product/T-DAGGER-Camaro-T-TGM306-RGB-Backlighting-Gaming-Mouse-Price-in-Pakistan-380x380-removebg-preview.png" alt="">
+                </div>
+                <div class="icons-product">
+                       
+                        <img src="./images/icons8-star-20 (2).png"class="icon-product" alt="#">
+                        <img src="./images/icons8-star-20 (2).png"class="icon-product" alt="#">
+                        <img src="./images/slider product/icons8-star-17.png    "class="icon-product2 " alt="#">
+                        <img src="./images/slider product/icons8-star-17.png    "class="icon-product2 " alt="#">
+                        <img src="./images/slider product/icons8-star-17.png    "class="icon-product2 " alt="#">
+                </div>
+                <p>DAGGER  T-TGM302</p>
+                <p class="price-product">13,655،300 تومان</p>
+      </div>
+          </div>
+          <div class="swiper-slide">
+                <div class="product">
+                    <div class="img-ptoducts">
+                        <img class="img-product" src="./images/slider product/Samsung-Tab-A7-Tablets-491901351-i-1-1200Wx1200H-300Wx300H-removebg-preview.png" alt="">
+                    </div>
+                    <div class="icons-product">
+                           
+                            <img src="./images/icons8-star-20 (2).png"class="icon-product" alt="#">
+                            <img src="./images/icons8-star-20 (2).png"class="icon-product" alt="#">
+                            <img src="./images/icons8-star-20 (2).png"class="icon-product" alt="#">
+                            <img src="./images/slider product/icons8-star-17.png    "class="icon-product2 " alt="#">
+                            <img src="./images/slider product/icons8-star-17.png    "class="icon-product2 " alt="#">
+                    </div>
+                    <p>Samsung Galaxy Tab A7</p>
+                    <p class="price-product">20،006،300 تومان</p>
+          </div>
+          </div>
+          <div class="swiper-slide">
+                <div class="product">
+                    <div class="img-ptoducts">
+                        <img class="img-product" src="https://images.samsung.com/is/image/samsung/p6pim/ph/galaxy-s21/gallery/ph-galaxy-s21-5g-g991-sm-g991bzvgphl-368315552?$650_519_PNG$" alt="">
+                    </div>
+                    <div class="icons-product">
+                           
+                            <img src="./images/icons8-star-20 (2).png"class="icon-product" alt="#">
+                            <img src="./images/icons8-star-20 (2).png"class="icon-product" alt="#">
+                            <img src="./images/icons8-star-20 (2).png"class="icon-product" alt="#">
+                            <img src="./images/icons8-star-20 (2).png"class="icon-product" alt="#">
+                            <img src="./images/slider product/icons8-star-17.png    "class="icon-product2 " alt="#">
+                    </div>
+                    <p>Samsung Galaxy S21</p>
+                    <p class="price-product">31،156،300 تومان</p>
+          </div>
+          </div>
+          <div class="swiper-slide">
+                <div class="product">
+                    <div class="img-ptoducts">
+                        <img class="img-product" src="https://res-1.cloudinary.com/grover/image/upload/v1657790956/svpmamvk2782bpb3h3gj.png" alt="">
+                    </div>
+                    <div class="icons-product">
+                           
+                            <img src="./images/icons8-star-20 (2).png"class="icon-product" alt="#">
+                            <img src="./images/icons8-star-20 (2).png"class="icon-product" alt="#">
+                            <img src="./images/icons8-star-20 (2).png"class="icon-product" alt="#">
+                            <img src="./images/icons8-star-20 (2).png"class="icon-product" alt="#">
+                            <img src="./images/icons8-star-20 (2).png"class="icon-product" alt="#">
+                    </div>
+                    <p> Acer Nitro 5</p>
+                    <p class="price-product">38،486،800 تومان</p>
+          </div>
+          </div>
+          <div class="swiper-slide">
+                <div class="product">
+                    <div class="img-ptoducts">
+                        <img class="img-product" src="./images/slider product/5JTsTP413PmWgSXv-removebg-preview.png" alt="">
+                    </div>
+                    <div class="icons-product">
+                           
+                            <img src="./images/icons8-star-20 (2).png"class="icon-product" alt="#">
+                            <img src="./images/icons8-star-20 (2).png"class="icon-product" alt="#">
+                            <img src="./images/icons8-star-20 (2).png"class="icon-product" alt="#">
+                            <img src="./images/slider product/icons8-star-17.png    "class="icon-product2 " alt="#">
+                            <img src="./images/slider product/icons8-star-17.png    "class="icon-product2 " alt="#">
+                    </div>
+                    <p> Apple Watch Series 3</p>
+                    <p class="price-product">24،000،000 تومان</p>
+          </div>
+          </div>
+    
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+  
+</aside>
+
+
+<div class="swiper-new-product my-5" data-aos="fade-up">
+    <div class="swiper mySwiper3">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide swiper-slide3">
+                <div class="slide3">
+                    <div class="img-slid3-div">
+                        <img src="./images/macbook-air-space-gray-select-201810-removebg-preview.png"  class=" img-slide3 img-fluid" alt="">
+                    </div>
+                    <div class="intro-new-product">
+                        <div class="apple-logo mt-3">
+                             <img src="./images/icons8-apple-logo-40 (1).png " class="apple-icon" alt="">
+                        </div>
+                       
+                        <p>MacBook Air</p> 
+                          <p  class="title-slider3">بالاترین کیفیت،بهترین قیمت</p>
+                    <p class="text-intro-new-product px-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa earum libero et numquam temporibus obcaecati labore aliquid, quae similique neque eaque odit quod deserunt expedita consequatur suscipit aut laborum saepe?</p>
+                     
+                        <div class="btn-product-div">
+                            <button class="btn btn-slider3">مشخصات بیشتر</button>
+               </div>
+                    </div>
+              </div>
+            </div>
+
+
+
+          <div class="swiper-slide">  <div class="swiper-slide swiper-slide3">
+                <div class="slide3">
+                    <div class="img-slid3-div">
+                        <img src="./images/423-4238149_macbook-pro-late-2019-hd-png-download-removebg-preview.png"  class=" img-slide3 img-fluid" alt="">
+                    </div>
+                    <div class="intro-new-product">
+                        <div class="apple-logo mt-3">
+                             <img src="./images/icons8-apple-logo-40 (1).png " class="apple-icon" alt="">
+                        </div>
+                       
+                        <p>  Apple MacBook Air 2020</p> 
+                          <p  class="title-slider3">بالاترین سرعت،بهترین قیمت</p>
+                    <p class="text-intro-new-product px-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa earum libero et numquam temporibus obcaecati labore aliquid, quae similique neque eaque odit quod deserunt expedita consequatur suscipit aut laborum saepe?</p>
+                     
+                        <div class="btn-product-div">
+                            <button class="btn btn-slider3">مشخصات بیشتر</button>
+               </div>
+                    </div>
+              </div>
+            </div></div>
+
+            
+          <div class="swiper-slide">  <div class="swiper-slide swiper-slide3">
+                <div class="slide3">
+                    <div class="img-slid3-div">
+                        <img src="./images/LD0005819956_1-removebg-preview.png"  class=" img-slide3 img-fluid" alt="">
+                    </div>
+                    <div class="intro-new-product">
+                        <div class="apple-logo mt-3">
+                             <img src="./images/icons8-apple-logo-40 (1).png " class="apple-icon" alt="">
+                        </div>
+                       
+                        <p> Apple MacBook Air M1</p> 
+                          <p  class="title-slider3">بالاترین قدرت،بهترین قیمت</p>
+                    <p class="text-intro-new-product px-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa earum libero et numquam temporibus obcaecati labore aliquid, quae similique neque eaque odit quod deserunt expedita consequatur suscipit aut laborum saepe?</p>
+                     
+                        <div class="btn-product-div">
+                            <button class="btn btn-slider3">مشخصات بیشتر</button>
+               </div>
+                    </div>
+              </div>
+            </div></div>
+ 
+        </div>
+      
+      </div>
+</div>
+
+<aside class=" mx-5"  data-aos="flip-left">
+    <div class="swiper mySwiper2">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <div class="product">
+                    <div class="img-ptoducts">
+                        <img class="img-product" src="./images/slider product/Samsung-Tab-A7-Tablets-491901351-i-1-1200Wx1200H-300Wx300H-removebg-preview.png" alt="">
+                    </div>
+                    <div class="icons-product">
+                           
+                            <img src="./images/icons8-star-20 (2).png"class="icon-product" alt="#">
+                            <img src="./images/icons8-star-20 (2).png"class="icon-product" alt="#">
+                            <img src="./images/icons8-star-20 (2).png"class="icon-product" alt="#">
+                            <img src="./images/slider product/icons8-star-17.png    "class="icon-product2 " alt="#">
+                            <img src="./images/slider product/icons8-star-17.png    "class="icon-product2 " alt="#">
+                    </div>
+                    <p>Samsung Galaxy Tab A7</p>
+                    <p class="price-product">20،006،300 تومان</p>
+          </div>
+          </div>
+          <div class="swiper-slide">
+                <div class="product">
+                    <div class="img-ptoducts">
+                        <img class="img-product" src="https://images.samsung.com/is/image/samsung/p6pim/ph/galaxy-s21/gallery/ph-galaxy-s21-5g-g991-sm-g991bzvgphl-368315552?$650_519_PNG$" alt="">
+                    </div>
+                    <div class="icons-product">
+                           
+                            <img src="./images/icons8-star-20 (2).png"class="icon-product" alt="#">
+                            <img src="./images/icons8-star-20 (2).png"class="icon-product" alt="#">
+                            <img src="./images/icons8-star-20 (2).png"class="icon-product" alt="#">
+                            <img src="./images/icons8-star-20 (2).png"class="icon-product" alt="#">
+                            <img src="./images/slider product/icons8-star-17.png    "class="icon-product2 " alt="#">
+                    </div>
+                    <p>Samsung Galaxy S21</p>
+                    <p class="price-product">31،156،300 تومان</p>
+          </div>
+          </div>
+          <div class="swiper-slide">
+                <div class="product">
+                    <div class="img-ptoducts">
+                        <img class="img-product" src="https://res-1.cloudinary.com/grover/image/upload/v1657790956/svpmamvk2782bpb3h3gj.png" alt="">
+                    </div>
+                    <div class="icons-product">
+                           
+                            <img src="./images/icons8-star-20 (2).png"class="icon-product" alt="#">
+                            <img src="./images/icons8-star-20 (2).png"class="icon-product" alt="#">
+                            <img src="./images/icons8-star-20 (2).png"class="icon-product" alt="#">
+                            <img src="./images/icons8-star-20 (2).png"class="icon-product" alt="#">
+                            <img src="./images/icons8-star-20 (2).png"class="icon-product" alt="#">
+                    </div>
+                    <p> Acer Nitro 5</p>
+                    <p class="price-product">38،486،800 تومان</p>
+          </div>
+          </div>
+          <div class="swiper-slide">
+                <div class="product">
+                    <div class="img-ptoducts">
+                        <img class="img-product" src="./images/slider product/5JTsTP413PmWgSXv-removebg-preview.png" alt="">
+                    </div>
+                    <div class="icons-product">
+                           
+                            <img src="./images/icons8-star-20 (2).png"class="icon-product" alt="#">
+                            <img src="./images/icons8-star-20 (2).png"class="icon-product" alt="#">
+                            <img src="./images/icons8-star-20 (2).png"class="icon-product" alt="#">
+                            <img src="./images/slider product/icons8-star-17.png    "class="icon-product2 " alt="#">
+                            <img src="./images/slider product/icons8-star-17.png    "class="icon-product2 " alt="#">
+                    </div>
+                    <p> Apple Watch Series 3</p>
+                    <p class="price-product">24،000،000 تومان</p>
+          </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="product">
+                    <div class="img-ptoducts">
+                        <img class="img-product" src="./images/slider product/iphone-13-pro-max-sierrablue-1_3_1-removebg-preview.png" alt="">
+                    </div>
+                    <div class="icons-product">
+                           
+                            <img src="./images/icons8-star-20 (2).png"class="icon-product" alt="#">
+                            <img src="./images/icons8-star-20 (2).png"class="icon-product" alt="#">
+                            <img src="./images/icons8-star-20 (2).png"class="icon-product" alt="#">
+                            <img src="./images/icons8-star-20 (2).png"class="icon-product" alt="#">
+                            <img src="./images/icons8-star-20 (2).png"class="icon-product" alt="#">
+                    </div>
+                    <p>Iphone 13 Pro 256</p>
+                    <p class="price-product">34،456،300 تومان</p>
+          </div>
+        </div>
+
+          <div class="swiper-slide">
+            <div class="product">
+                <div class="img-ptoducts">
+                    <img class="img-product" src="./images/slider product/7237df3bcde9f98c7086bd7a36de7f0b-removebg-preview.png" alt="">
+                </div>
+                <div class="icons-product">
+                       
+                        <img src="./images/icons8-star-20 (2).png"class="icon-product" alt="#">
+                        <img src="./images/icons8-star-20 (2).png"class="icon-product" alt="#">
+                        <img src="./images/icons8-star-20 (2).png"class="icon-product" alt="#">
+                        <img src="./images/icons8-star-20 (2).png"class="icon-product" alt="#">
+                        <img src="./images/slider product/icons8-star-17.png    "class="icon-product2 " alt="#">
+                </div>
+                <p>chuwi herobook pro</p>
+                <p class="price-product">40،400،000 تومان</p>
+      </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="product">
+                <div class="img-ptoducts">
+                    <img class="img-product" src="./images/slider product/GUEST_e9b7f629-9bfb-4461-939b-f05922c57f5b-removebg-preview.png" alt="">
+                </div>
+                <div class="icons-product">
+                       
+                        <img src="./images/icons8-star-20 (2).png"class="icon-product" alt="#">
+                        <img src="./images/icons8-star-20 (2).png"class="icon-product" alt="#">
+                        <img src="./images/icons8-star-20 (2).png"class="icon-product" alt="#">
+                        <img src="./images/icons8-star-20 (2).png"class="icon-product" alt="#">
+                        <img src="./images/slider product/icons8-star-17.png    "class="icon-product2 " alt="#">
+                </div>
+                <p> Apple Watch SE GPS</p>
+                <p class="price-product">16،700،300 تومان</p>
+      </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="product">
+                <div class="img-ptoducts">
+                    <img class="img-product" src="./images/slider product/T-DAGGER-Camaro-T-TGM306-RGB-Backlighting-Gaming-Mouse-Price-in-Pakistan-380x380-removebg-preview.png" alt="">
+                </div>
+                <div class="icons-product">
+                       
+                        <img src="./images/icons8-star-20 (2).png"class="icon-product" alt="#">
+                        <img src="./images/icons8-star-20 (2).png"class="icon-product" alt="#">
+                        <img src="./images/slider product/icons8-star-17.png    "class="icon-product2 " alt="#">
+                        <img src="./images/slider product/icons8-star-17.png    "class="icon-product2 " alt="#">
+                        <img src="./images/slider product/icons8-star-17.png    "class="icon-product2 " alt="#">
+                </div>
+                <p>DAGGER  T-TGM302</p>
+                <p class="price-product">13,655،300 تومان</p>
+      </div>
+          </div>
+         
+    
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+  
+</aside>
+
+
+
+
+
+
+
+<footer class="footer" data-aos="fade-up"
+data-aos-duration="3000">
+    <div class="container">
+        <div class="footer-ul-div">
+            <div class="footer-items">
+               
+                <ul class="ul-footer">
+                    <li><a class="p1-footer-items" href="#">راهنما</a></li>
+                    <li class="pt-3"><a href="#">قوانین</a></li>
+                    <li><a href="#">سفارشات</a></li>
+                    <li><a href="#">شکایات</a></li>
+                    <li><a href="#">نوع پرداخت</a></li>
+                    <li><a href="#">نوع ارسال</a></li>
+                </ul>
+            </div>
+            <div class="footer-items">
+             
+                <ul class="ul-footer">
+                    <li><a class="p1-footer-items" href="#">درباره ما</a></li>
+                    <li class="pt-3"><a href="#">تیم ما</a></li>
+                    <li><a href="#">آدرس</a></li>
+                    <li><a href="#">مجوز ها</a></li>
+                    <li><a href="#">تاریخچه</a></li>
+                   
+                </ul>
+            </div>
+            <div class="footer-items">
+               
+                <ul class="ul-footer">
+                    <li><a class="p1-footer-items" href="#">  برخی محصولات</a></li>
+                    <li class="pt-3"><a href="#"> لپ تاپ</a></li>
+                    <li><a href="#"> موبایل</a></li>
+                    <li><a href="#">  تبلت</a></li>
+                    <li><a href="#">  ساعت</a></li>
+                </ul>
+            </div>
+          
+        </div>
+         
+    </div>
+</footer>
+<div class="footer2"> 
+     <div class="footer2-items mx-3">
+        
+ 
+            <a  href="#"><img class="mx-2" src="./images/icons8-facebook-35.png" alt=""></a>
+            <a  href="#"><img class="mx-2" src="./images/icons8-instagram-35.png" alt=""></a>
+            <a  href="#"><img class="mx-2" src="./images/icons8-twitter-35.png" alt=""></a>
+            <a   href="#"><img class="mx-2" src="./images/icons8-telegram-app-35.png" alt=""></a>
+     
+    </div>
+    <div >
+        <p class="mx-lg-2">کلیه حقوق این سایت محفوظ است</p>
+    </div>
+    
+  
+</div>
+
+
+<div id="iziToast" ></div>
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+<script src="./styles/js framework/iziToast.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+<script src="./styles/js framework/wow.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+<script src="./styles/style.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+</body>
+</html>
+
